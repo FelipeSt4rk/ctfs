@@ -1,16 +1,16 @@
 # Find Sub Domain with Perl
 
-# MODULES THAT WILL BE REQUIRED TO USE THE SCRIPT
+##### MODULES THAT WILL BE REQUIRED TO USE THE SCRIPT
 
 1. strict
 2. warnings
 3. IO::Socket::INET
 
-# HOW INSTALL MODULES 
+##### HOW INSTALL MODULES 
 
 - sudo cpan install strict warnings IO::Socket::Inet
 
-# HOW USE
+##### HOW USE
 
 - git clone https://github.com/FelipeSt4rk/FindSubDomain
 
