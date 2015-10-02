@@ -5,10 +5,11 @@
 1. strict
 2. warnings
 3. IO::Socket::INET
+4. Term::ANSIColor
 
 ##### HOW INSTALL MODULES 
 
-- sudo cpan install strict warnings IO::Socket::Inet
+- sudo cpan install strict warnings IO::Socket::Inet Term::ANSIColor
 
 ##### HOW USE
 
@@ -17,3 +18,8 @@
 - cd FindSubDomain
 
 - perl fsd.pl google.com
+
+##### OTHERS COMMANDS
+
+- perl fsd.pl google - result.txt
+- perl fsd.pl --help
