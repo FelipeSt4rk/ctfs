@@ -12,32 +12,33 @@ my $result;
 my $domain = $ARGV[0];
 #### /END VARIAVEIS ####
 
-print color("bold");
+sub help {
+	print color("bold"),"\nYou can use the FindSubDomain in 3 ways:
+	\rperl fsd.pl github.com
+	\rperl fsd.pl github.com --save result.txt
+	\rperl fsd.pl github.com -s result.txt\n\n",color("reset");
+	exit;
+}
 
 if (!$domain) {
-	print color("red"),"\nFollow the example: perl fsd.pl google.com\n\n",color("reset");
-	exit; # Finalizando Script
+	return help();
 }
 
 if ( ($domain eq "-h") || ($domain eq "--help") ) {
-	print "\nYou can use the FindSubDomain in 3 ways:
-	\rperl fsd.pl github.com
-	\rperl fsd.pl github.com --save result.txt
-	\rperl fsd.pl github.com -s result.txt\n\n";
-	exit;
+	return help();
 }
 
 if ($ARGV[1]) {
 
 	if ( ($ARGV[1] ne "-s") && ($ARGV[1] ne "--save") ) {
-		print color("red"),"\n[+] WARNING: option incompatible.Use '-'.\n",color("reset");
+		print color("bold red"),"\n[+] WARNING: option incompatible.Use '-'.\n",color("reset");
 		exit; # Finalizando Script
 	}
 
 	my $name = $ARGV[2];
 
 	if (!$name) {
-		print color("red"),"\nERROR: For this option set the file name.
+		print color("bold red"),"\nERROR: For this option set the file name.
 		\rFollor the example: perl fsd.pl > result.txt\n\n",color("reset");
 		exit; # Finalizando Script
 	}
@@ -49,7 +50,7 @@ if ($ARGV[1]) {
 $domain =~ s/https:\/\/// || $domain =~ s/http:\/\/// || $domain =~ s/www.// ;
 
 sub error { #### SUB ROTINA FOR ERROR
-	print color("red"),"\nERROR: It is not possible to open the file 'subs.txt'\n\n",color("reset");
+	print color("bold red"),"\nERROR: It is not possible to open the file 'subs.txt'\n\n",color("reset");
 	exit; # Finalizando Script
 }
 
@@ -69,7 +70,7 @@ while (<$subs>) { # Criando Loop
 
 	if ($socket) { # Imprimindo resposta
 		my $IpAddr = inet_ntoa (scalar gethostbyname($find)); # Encontrando IP
-		print color("green"),"\n$find $IpAddr\n";
+		print color("bold green"),"\n$find $IpAddr\n",color("reset");
 
 		if ($ARGV[2]) {
 			my $IpAddr = inet_ntoa (scalar gethostbyname($find)); # Encontrando IP
@@ -80,7 +81,6 @@ while (<$subs>) { # Criando Loop
 	
 }
 
-print color("reset"); # Voltando a cor normal do usuario
 close $result;
 close $subs; # Fechando wordlist
 exit; # Finalizando Script
