@@ -20,15 +20,16 @@ if (!$domain) {
 }
 
 if ( ($domain eq "-h") || ($domain eq "--help") ) {
-	print "\nYou can use the FindSubDomain in 2 ways:
-	\rperl fsd.pl site.com
-	\rperl fsd.pl site.com - result.txt\n\n";
+	print "\nYou can use the FindSubDomain in 3 ways:
+	\rperl fsd.pl github.com
+	\rperl fsd.pl github.com --save result.txt
+	\rperl fsd.pl github.com -s result.txt\n\n";
 	exit;
 }
 
 if ($ARGV[1]) {
 
-	if ( ($ARGV[1] ne "-s") && ($ARGV[1 ne "--save") )  {
+	if ($ARGV[1] ne "-") {
 		print color("red"),"\n[+] WARNING: option incompatible.Use '-'.\n",color("reset");
 		exit; # Finalizando Script
 	}
