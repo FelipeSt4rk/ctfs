@@ -21,5 +21,7 @@
 
 ##### OTHERS COMMANDS
 
-- perl fsd.pl google - result.txt
+- perl fsd.pl google.com -s result.txt
+- perl fsd.pl google.com --save result.txt
 - perl fsd.pl --help
+- perl fsd.pl -h
