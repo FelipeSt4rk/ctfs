@@ -29,7 +29,7 @@ if ( ($domain eq "-h") || ($domain eq "--help") ) {
 
 if ($ARGV[1]) {
 
-	if ( ($ARGV[1] ne "-s") || ($ARGV[1] ne "--save") ) {
+	if ( ($ARGV[1] ne "-s") && ($ARGV[1] ne "--save") ) {
 		print color("red"),"\n[+] WARNING: option incompatible.Use '-'.\n",color("reset");
 		exit; # Finalizando Script
 	}
