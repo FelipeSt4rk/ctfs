@@ -7,21 +7,20 @@
 3. IO::Socket::INET
 4. Term::ANSIColor
 
-##### HOW INSTALL MODULES 
+####Installing:
 
-- sudo cpan install strict warnings IO::Socket::Inet Term::ANSIColor
+    git clone https://github.com/FelipeStr4rk/FindSubDomain
+    cd FindSubDomain
+    cpan install  strict warnings Switch IO::Socket::INET
 
-##### HOW USE
+####Commands:
 
-- git clone https://github.com/FelipeSt4rk/FindSubDomain
+	COMMAND          FUNCTION
+	-u --url         Setting target.
+	-s --save        Saving result.
 
-- cd FindSubDomain
-
-- perl fsd.pl google.com
-
-##### OTHERS COMMANDS
-
-- perl fsd.pl google.com -s result.txt
-- perl fsd.pl google.com --save result.txt
-- perl fsd.pl --help
-- perl fsd.pl -h
+	Examples:
+	perl fsd.pl -u google.com
+	perl fsd.pl --url google.com
+	perl fsd.pl -u google.com -s result.txt
+	perl fsd.pl -u google.com --save result.txt
